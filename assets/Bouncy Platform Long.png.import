@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Egg.png-d5d0b5565e1ed29f3e3152eb78eb0ab6.stex"
+path="res://.import/Bouncy Platform Long.png-9b2628c180785c5ec622adb5c4ee7b17.stex"
 
 [deps]
 
-source_file="res://assets/Egg.png"
-source_md5="a608a69780f7b1aa4072a0754358f47b"
+source_file="res://assets/Bouncy Platform Long.png"
+source_md5="6e111ce359d3a0e4b76d9d7112734930"
 
-dest_files=[ "res://.import/Egg.png-d5d0b5565e1ed29f3e3152eb78eb0ab6.stex" ]
-dest_md5="dfa3add13ef4b276fe897e3d8f6bdbdf"
+dest_files=[ "res://.import/Bouncy Platform Long.png-9b2628c180785c5ec622adb5c4ee7b17.stex" ]
+dest_md5="8e9527dcae2d8b2bec0cba1e4210dbe6"
 
 [params]
 

@@ -1,15 +1,99 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Egg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NewEgg.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Background.png" type="Texture" id=3]
+[ext_resource path="res://Branch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://OtherBranch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/grass.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
-Egg = ExtResource( 2 )
+NewEgg = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
+[node name="Chicken1Timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Chicken2Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Chicken3Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Chicken4Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="TextureRect" type="TextureRect" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 798.0
+margin_bottom = 599.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+
+[node name="Branch1" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 3.71834, 188.647 )
+
+[node name="Branch2" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -6.60924, 326.877 )
+
+[node name="Branch3" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 794.404, 195.719 )
+
+[node name="Branch4" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 792.97, 341.981 )
+
+[node name="Grass1" type="StaticBody2D" parent="." index="9"]
+
+position = Vector2( 2.86581, 494.329 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Grass1" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -22,16 +106,111 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 stretch_mode = 0
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Chicken1Timer" type="Timer" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass1" index="1"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = true
-autostart = false
+position = Vector2( 150.733, 39.419 )
+scale = Vector2( 14.9542, 1.85366 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Grass2" type="StaticBody2D" parent="." index="10"]
+
+position = Vector2( 301.831, 494.299 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Grass2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2" index="1"]
+
+position = Vector2( 150.733, 39.419 )
+scale = Vector2( 14.9542, 1.85366 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Grass3" type="StaticBody2D" parent="." index="11"]
+
+position = Vector2( 600.823, 494.391 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Grass3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass3" index="1"]
+
+position = Vector2( 150.733, 39.419 )
+scale = Vector2( 14.9542, 1.85366 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [connection signal="timeout" from="Chicken1Timer" to="." method="_on_Chicken1Timer_timeout"]
+
+[connection signal="timeout" from="Chicken2Timer" to="." method="_on_Chicken2Timer_timeout"]
+
+[connection signal="timeout" from="Chicken3Timer" to="." method="_on_Chicken3Timer_timeout"]
+
+[connection signal="timeout" from="Chicken4Timer" to="." method="_on_Chicken4Timer_timeout"]
 
 
